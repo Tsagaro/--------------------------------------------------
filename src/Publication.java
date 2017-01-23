@@ -1,29 +1,20 @@
+
 import java.util.ArrayList;
 
-public class Publication
-{
-	// Δηλώνω τα entities που θα χρησιμοποιήσω
+public class Publication {
+	
 	private ArrayList<String> authors;
-	private String title, booktitle;
+	private String title, booktitle, type;
 	private short year;
-	private static int counter=0;
-
-	public Publication()
-	{
-		// Αρχικοποιήω τις entities
+			
+	public Publication() {
 		authors = new ArrayList<String>();
-		this.title = "   ";
-		this.booktitle = "   ";
+		this.title = "-";
+		this.booktitle = "-";
+		//this.type = "";
 		this.year = 0000;
-
 	}
-
-	// Constructor που ελέγχει αν υπάρχει ο συγγραγέας.
-	// Παίρνει ως input το όνομα του συγγραφέα και ελέγχει αν υπάρχει αυτό το
-	// όνομα στον πίνακα των authors
-	// Αν υπάρχει επιστρέφει true
-	// Αν δεν υπάρχει επιστρέφει false
-
+	
 	public boolean containAuthor(String author) {
 		for(int i=0; i<this.authors.size(); i++) {
 			if(author.equals(this.authors.get(i))) {
@@ -58,10 +49,9 @@ public class Publication
 	}	
 	/* Methodos toString()pou orizei tin morfi emfanisis kathe dimosieusis.*/
 	public String toString() {
-		counter++;
 		String temp = "";
+		//temp+="\t(Type: "+this.getType()+")\n";
 		temp+="\t----------------------\n";
-		temp+="\tID: "+counter+"\n";
 		temp+="\tAuthors: \n";
 		for(int i=0; i<this.authors.size(); i++) {
 			temp+="\t"+new Integer(i+1)+": "+this.authors.get(i)+"\n";
@@ -72,7 +62,10 @@ public class Publication
 
 		return temp;
 	}
-	
-	
-
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 }

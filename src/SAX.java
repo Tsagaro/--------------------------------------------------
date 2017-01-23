@@ -24,13 +24,17 @@ public class SAX
 		MyHandler handler = new MyHandler();
 		
 		
-		InputSource is = new InputSource("dblp.xml");
+		InputSource is = new InputSource("dblp.txt");
 		is.setEncoding("ISO-8859-1");
 		System.out.println("Please wait...");
 		saxparser.parse(is, handler);
 		
 		//System.out.println(handler.getProfessors());
+		
+		//emfanizei mia html selida me ta apotelesmata
 
+		// handler.createHtmlPage();
+		
 	}
 
 }
