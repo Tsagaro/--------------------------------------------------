@@ -19,12 +19,8 @@ public class SAX
 		spfac.setNamespaceAware(true);
 		spfac.setValidating(true);
 		SAXParser saxparser = spfac.newSAXParser();
-		
-		
 		MyHandler handler = new MyHandler();
-		
-		
-		InputSource is = new InputSource("dblp.txt");
+  	InputSource is = new InputSource("dblp.xml");
 		is.setEncoding("ISO-8859-1");
 		System.out.println("Please wait...");
 		saxparser.parse(is, handler);
