@@ -129,12 +129,7 @@ public class MyHandler extends DefaultHandler {
     	  }
       }
        
-       
-//       public void createHTMLPage(){
-//    	   	String var = Publication.getTitle();
-//       		<il> $var </li>
-//       }
-//       
+         
           
  }
 
