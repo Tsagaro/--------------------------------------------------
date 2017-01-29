@@ -4,8 +4,8 @@ import java.util.ArrayList;
 public class Publication {
 	
 	private ArrayList<String> authors;
-
 	private String title, booktitle;
+
 	private short year;
 			
 	public Publication() {
@@ -62,5 +62,4 @@ public class Publication {
 
 		return temp;
 	}
-
 }

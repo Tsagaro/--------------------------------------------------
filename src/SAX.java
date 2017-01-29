@@ -20,8 +20,9 @@ public class SAX
 		spfac.setValidating(true);
 		SAXParser saxparser = spfac.newSAXParser();
 		MyHandler handler = new MyHandler();
-  	InputSource is = new InputSource("dblp.xml");
-		is.setEncoding("ISO-8859-1");
+		
+		InputSource is = new InputSource("dblp.xml");
+
 		System.out.println("Please wait...");
 		saxparser.parse(is, handler);
 		
