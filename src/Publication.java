@@ -5,8 +5,20 @@ public class Publication {
 	
 	private ArrayList<String> authors;
 	private String title, booktitle;
-
 	private short year;
+    /* idCounter to count the number of total publications and flag to test whether to show or not
+     * and their set and get methods 
+     */ 
+    private static int idCounter=0;
+
+	public static int getIdCounter() {
+		return idCounter;
+	}
+
+	public static void increaseIdCounter() {
+		idCounter++;
+	}
+	
 			
 	public Publication() {
 		authors = new ArrayList<String>();
@@ -47,18 +59,38 @@ public class Publication {
 	public void setBooktitle(String booktitle) {
 		this.booktitle = booktitle;
 	}	
-	/* Methodos toString()pou orizei tin morfi emfanisis kathe dimosieusis.*/
-	public String toString() {
+	
+	/* Methodos createHtmlTable()pou orizei tin morfi emfanisis kathe dimosieusis.*/
+	
+	public String createHtmlTable() {
 		String temp = "";
-		//temp+="\t(Type: "+this.getType()+")\n";
-		temp+="\t----------------------\n";
-		temp+="\tAuthors: \n";
+		
+		/*Create a table row for the new publication data */
+		temp+="<tr>";
+		
+		/*First column of the table for publication Id */
+		temp+="<td>"+"# "+getIdCounter()+"</td>";
+		
+		/*Second column of the table for Authors */
+		temp+="<td>";
 		for(int i=0; i<this.authors.size(); i++) {
-			temp+="\t"+new Integer(i+1)+": "+this.authors.get(i)+"\n";
+			temp+="\t"+new Integer(i+1)+": "+this.authors.get(i)+"\n"+"</br>";
 		}
-		temp+="\tTitle: "+this.getTitle()+"\n";
-		temp+="\tBookTitle: "+this.getBooktitle()+"\n";
-		temp+="\tYear: "+this.getYear()+"\n\n";
+		temp+="</td>";
+		
+		/*Third column of the table for publication titles */
+		temp+="<td>"+this.getTitle()+"</td>";
+		
+		/*Fourth column of the table for BookTitles*/
+		temp+="<td>"+this.getBooktitle()+"</td>";
+		
+		/*Fifth column of the table for publication Years*/
+		temp+="<td>"+this.getYear()+"</td>";
+		
+		
+		/*Close the row of the table*/
+		temp+="</tr>";
+		
 
 		return temp;
 	}
