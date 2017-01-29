@@ -24,7 +24,7 @@ public class SAX
 		MyHandler handler = new MyHandler();
 		
 		
-		InputSource is = new InputSource("dblp.txt");
+		InputSource is = new InputSource("dblp.xml");
 		is.setEncoding("ISO-8859-1");
 		System.out.println("Please wait...");
 		saxparser.parse(is, handler);

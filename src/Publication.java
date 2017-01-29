@@ -4,14 +4,13 @@ import java.util.ArrayList;
 public class Publication {
 	
 	private ArrayList<String> authors;
-	private String title, booktitle, type;
+	private String title, booktitle;
 	private short year;
 			
 	public Publication() {
 		authors = new ArrayList<String>();
 		this.title = "-";
 		this.booktitle = "-";
-		//this.type = "";
 		this.year = 0000;
 	}
 	
@@ -62,10 +61,5 @@ public class Publication {
 
 		return temp;
 	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
+	
 }

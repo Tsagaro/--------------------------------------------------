@@ -18,17 +18,20 @@ import org.xml.sax.helpers.DefaultHandler;
 public class MyHandler extends DefaultHandler {
 
        private Publication publication = new Publication();
-/*     Array for searching the names from the file names.txt with the names of authors */
+       /* Array for searching the names from the file names.txt with the names of authors */
        private static String[] namesArray = new String[27];
        protected Hashtable<String, ArrayList<Publication>> professorsPublications = new Hashtable<String, ArrayList<Publication>>();
        private String temp ;
-       /*idCounter to count the number of total publications and flag to test whether to show or not*/ 
+       /* idCounter to count the number of total publications and flag to test whether to show or not*/ 
        private int idCounter=0;
        private boolean flag = false;     
        
        public MyHandler() {
     	   super();
+    	   /* call to readFile method to read the names from the file and put them in namesArray */
+    	   readFile();
        }
+       
       
        public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException 
        {
